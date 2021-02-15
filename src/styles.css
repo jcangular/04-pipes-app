@@ -3,4 +3,12 @@ body {
   background-color: var(--surface-b);
   color: var(--text-color);
   font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vertical-content {
+  height: 100%;
 }
