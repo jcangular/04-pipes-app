@@ -9,8 +9,10 @@ import { SalesModule } from './sales/sales.module';
 import { SharedModule } from './shared/shared.module';
 
 import localHN from '@angular/common/locales/es-HN';
+import localFR from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localHN);
+registerLocaleData(localFR);
 
 @NgModule({
     declarations: [
