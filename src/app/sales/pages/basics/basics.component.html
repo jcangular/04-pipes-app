@@ -1,1 +1,58 @@
-<p>basics works!</p>
+<h1>Pipes Básicos</h1>
+<p>
+    Pipes incluídos en Angular - Usualmente en el Common Module.
+</p>
+
+<div class="p-grid">
+    <div class="p-col-4">
+        <p-card header="UpperCase" [subheader]="lowerName">
+            {{ lowerName | uppercase }}
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card header="LowerCase" [subheader]="upperName">
+            {{ upperName | lowercase }}
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card header="TitleCase" [subheader]="fullName">
+            {{ fullName | titlecase }}
+        </p-card>
+    </div>
+</div>
+
+
+<h1>Data | Fecha | Pipe</h1>
+<p>
+    Pipes para el manejo de fechas.
+</p>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card header="Código">
+            <ul>
+                <li>today</li>
+                <li>today | date</li>
+                <li>today | date:'short'</li>
+                <li>today | date:'long'</li>
+                <li>today | date:'dd/MM/yyyy HH:mm'</li>
+                <li>today | date:'MMMM dd, yyyy'</li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="p-col-6">
+        <p-card header="Salida">
+            <ul>
+                <li>{{today}}</li>
+                <li>{{today | date}}</li>
+                <li>{{today | date:'short'}}</li>
+                <li>{{today | date:'long'}}</li>
+                <li>{{today | date:'dd/MM/yyyy HH:mm'}}</li>
+                <li>{{today | date:'MMMM dd, yyyy'}}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>

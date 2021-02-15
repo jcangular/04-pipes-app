@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-basics',
-  templateUrl: './basics.component.html',
-  styles: [
-  ]
+    selector: 'app-basics',
+    templateUrl: './basics.component.html',
+    styles: [
+    ]
 })
-export class BasicsComponent implements OnInit {
+export class BasicsComponent {
 
-  constructor() { }
+    lowerName = 'josé';
+    upperName = 'JOSÉ';
+    fullName = 'JoSé CArlOs pALmA';
 
-  ngOnInit(): void {
-  }
+    today: Date = new Date();
 
 }
