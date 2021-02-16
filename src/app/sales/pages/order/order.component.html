@@ -1,1 +1,80 @@
-<p>order works!</p>
+<h1>Pipes personalizados</h1>
+<p>Pipes creados para la {{'Aplicación' | upper:upperFlag}}</p>
+
+
+
+<p-toolbar styleClass="p-mt-2">
+    <div class="p-toolbar-group-left">
+        <button pButton pRipple [label]="upperFlag?'Minúscula':'Mayúscula'" (click)="toggleCase()"
+            class="p-button-warning"></button>
+    </div>
+
+    <div class="p-toolbar-group-right">
+
+        <button pButton pRipple icon="pi pi-sort" label="Por nombre" (click)="changeOrderBy('name')"></button>
+        <button pButton pRipple icon="pi pi-sort" label="Vuela" class="p-button-success p-ml-1"
+            (click)="changeOrderBy('fly')"></button>
+        <button pButton pRipple icon="pi pi-sort" label="Por color" class="p-button-help p-ml-1"
+            (click)="changeOrderBy('color')"></button>
+    </div>
+</p-toolbar>
+
+<div class="p-grid p-mt-2">
+    <div class="p-col">
+        <p-table [value]="heros | sortHero:orderBy">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Superhéroe</th>
+                    <th>Vuela</th>
+                    <th>Color</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-hero>
+                <tr>
+                    <td>{{hero.name | titlecase}}</td>
+                    <td>{{hero.fly | canFly | titlecase}}</td>
+                    <td>{{hero.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+</div>
+
+
+<div class="p-grid p-mt-2">
+    <div class="p-col">
+        <p-table #heroTable [value]="heros" sortMode="multiple" [globalFilterFields]="['name']">
+            <ng-template pTemplate="caption">
+                <div class="p-d-flex">
+                    <span class="p-input-icon-left p-ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" placeholder="Search keyword"
+                            (input)="heroTable.filterGlobal($event.target.value,'contains')" />
+                    </span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name">
+                        Superhéroe <p-sortIcon field="name"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="fly">
+                        Vuela <p-sortIcon field="fly"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="color">
+                        Color <p-sortIcon field="color"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-hero>
+                <tr>
+                    <td>{{hero.name | titlecase}}</td>
+                    <td>{{hero.fly | canFly | titlecase}}</td>
+                    <td>{{hero.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+</div>

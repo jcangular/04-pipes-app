@@ -5,16 +5,22 @@ import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FieldsetModule } from 'primeng/fieldset';
+import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 import { RippleModule } from 'primeng/ripple';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 @NgModule({
     exports: [
         BadgeModule,
         ButtonModule,
         CardModule,
         FieldsetModule,
+        InputTextModule,
         MenubarModule,
-        RippleModule
+        RippleModule,
+        TableModule,
+        ToolbarModule
     ]
 })
 export class PrimeNgModule { }

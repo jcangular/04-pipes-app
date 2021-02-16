@@ -8,13 +8,20 @@ import { UncommonComponent } from '@pages/uncommon/uncommon.component';
 import { BasicsComponent } from '@pages/basics/basics.component';
 import { OrderComponent } from '@pages/order/order.component';
 
+import { UpperPipe } from '@pipes/upper.pipe';
+import { CanFlyPipe } from './pipes/can-fly.pipe';
+import { SortHeroPipe } from './pipes/sort-hero.pipe';
+
 
 @NgModule({
     declarations: [
         NumbersComponent,
         UncommonComponent,
         BasicsComponent,
-        OrderComponent
+        OrderComponent,
+        UpperPipe,
+        CanFlyPipe,
+        SortHeroPipe
     ],
     exports: [
         NumbersComponent,
