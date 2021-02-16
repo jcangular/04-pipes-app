@@ -21,6 +21,8 @@
       "@app/*": ["src/app/*"],
       "@sales/*": ["src/app/sales/*"],
       "@pages/*": ["src/app/sales/pages/*"],
+      "@pipes/*": ["src/app/sales/pipes/*"],
+      "@interfaces/*": ["src/app/sales/interfaces/*"],
       "@shared/*": ["src/app/shared/*"]
     }
   },
@@ -28,6 +30,7 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "strictDomEventTypes": false
   }
 }
